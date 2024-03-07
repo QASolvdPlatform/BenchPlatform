@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UnitConverter v1.3</title>
+    <style>
+        .result {
+            border-style: solid;
+            padding: 25px 50px 25px 50px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h2 class="title">UnitConverter v1.3</h2>
+        <label>My value</label>
+        <input type="text" class="inputField"></input>
+        <input type="radio" class="celsius" name="unit" value="Celsius" autocomplete="off">
+        <label for="celsius">Celsius</label>
+        <input type="radio" class="fahrenheit" name="unit" value="Fahrenheit" autocomplete="off">
+        <label for="fahrenheit">Fahrenheit</label>
+        <input type="submit" value="Convert to Celsius!" class="convertBtnC hidden"></input>
+        <input type="submit" value="Convert to Fahrenheit!" class="convertBtnF hidden"></input>
+        <input type="submit" value="Reset" class="resetBtn hidden"></input>
+        <h3 class="result hidden"></h3>
+    </main>
+    <script src="unitv3script.js"></script>
+</body>
+
+</html>

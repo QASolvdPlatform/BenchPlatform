@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UnitConverter v1.0</title>
+    <style>
+        .block { 
+            display: inline-block;
+        } 
+        
+        .current-result {
+            border-style: solid;
+            padding: 25px 50px 25px 50px;
+        }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section class="main">
+            <h2 class="title">UnitConverter v1.0</h2>
+            <label>Celsius</label>
+            <input type="text" class="value" id="input"></input>
+            <input type="submit" class="convertBtn" value="Convert to Fahrenheit"></input>
+            <div class="result block">
+                <h3 class="current-result a hidden"></h3>
+            </div>
+        </section>
+    </main>
+    <script src="unitv1script.js"></script>
+</body>
+
+</html>
