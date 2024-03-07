@@ -1,25 +1,58 @@
 'use strict';
 
-const convertBtn = document.querySelector('.convertBtn');
-const radioBtnCelsius = document.querySelector('.celsius');
 const input = document.querySelector('.inputField');
-const inputValue = input.value;
+const convertToCBtn = document.querySelector('.convertBtnC');
+const convertToFBtn = document.querySelector('.convertBtnF');
+const resetBtn = document.querySelector('.resetBtn');
+const radioCelsius = document.querySelector('.celsius');
+const radioFahrenheit = document.querySelector('.fahrenheit');
 const result = document.querySelector('.result');
 
-function isNumber() {
-    return isNaN();
-}
-
-function printResult() {
-    if (inputValue.isNaN) {
+//c to f
+function convertToF() {
+    if (isNaN(input.value)) {
         result.innerHTML = 'Value not allowed!';
-    } else if (radioBtnCelsius.checked) {
-        result.innerHTML = inputValue + ' ºC';
     } else {
-        result.innerHTML = (inputValue * 9 / 5) + 32 + ' ºF';
+        const fahrenheit = (input.value * 9/5) + 32 ;
+        result.innerHTML = `${fahrenheit} ºF`;
     }
 }
-convertBtn.addEventListener('click', function () {
+
+//f to c
+function convertToC() {
+    if (isNaN(input.value)) {
+        result.innerHTML = 'Value not allowed!';
+    }else {
+        const celsius = (input.value - 32) * 5/9;
+        result.innerHTML = `${celsius} ºC`
+    }
+}
+
+radioCelsius.addEventListener('click', function () {
+    convertToFBtn.classList.remove('hidden');
+    convertToCBtn.classList.add('hidden');
+
+})
+
+radioFahrenheit.addEventListener('click', function () {
+    convertToCBtn.classList.remove('hidden');
+    convertToFBtn.classList.add('hidden');
+
+})
+
+convertToCBtn.addEventListener('click', function () {
     result.classList.remove('hidden');
-    printResult();
+    resetBtn.classList.remove('hidden');
+    convertToC();
 });
+
+convertToFBtn.addEventListener('click', function () {
+    result.classList.remove('hidden');
+    resetBtn.classList.remove('hidden');
+    convertToF();
+});
+
+resetBtn.addEventListener('click', function () {
+    result.classList.add('hidden');
+    resetBtn.classList.add('hidden');
+})

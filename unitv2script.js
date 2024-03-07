@@ -1,39 +1,39 @@
 'use strict';
 
-const convertF = document.querySelector('.convertF');
-const convertC = document.querySelector('.convertC');
+const inputCelsius = document.querySelector('.fromCtoF');
+const inputFahrenheit = document.querySelector('.fromFtoC');
+const convertToFBtn = document.querySelector('.convertToF');
+const convertToCBtn = document.querySelector('.convertToC');
 const result = document.querySelector('.result');
-const inputC = document.getElementById('fromCtoF');
-const inputF = document.getElementById('fromFtoC');
 
 
-function isNumber() {
-    return isNaN();
-}
-
-function printResult(unit) {
+//celsius to f
+function convertToF() {
     result.classList.remove('hidden');
-    if (unit === "C") {
-        if (inputC.value.isNaN) {
-            result.innerHTML = 'Value not allowed!';
-        } else {
-            const fahrenheit = (inputC.value * 9 / 5) + 32;
-            result.innerHTML = `${fahrenheit} ºF`
-        }
+    if (isNaN(inputCelsius.value)) {
+        result.innerHTML = `Value not allowed!`;
     } else {
-        if (inputF.value.isNaN) {
-            result.innerHTML = 'Value not allowed!';
-        } else {
-            const celsius = (inputF.value - 32) * 5 / 9;
-            result.innerHTML = `${celsius} ºC`;
-        }
+        const fahrenheit = (inputCelsius.value * 9/5) + 32 ;
+        result.innerHTML = `${fahrenheit} ºF`;
     }
 }
-convertC.addEventListener('click', function () {
-    printResult("C");
+
+//f to celsius
+function convertToC() {
+    result.classList.remove('hidden');
+    if (isNaN(inputFahrenheit.value)) {
+        result.innerHTML = `Value not allowed!`;
+    }else {
+        const celsius = (inputFahrenheit.value - 32) * 5/9;
+        result.innerHTML = `${celsius} ºC`
+    }
+}
+
+convertToFBtn.addEventListener('click', function () {
+    convertToF();
 });
 
-convertF.addEventListener('click', function () {
-    printResult("F");
+convertToCBtn.addEventListener('click', function () {
+    convertToC();
 });
 
