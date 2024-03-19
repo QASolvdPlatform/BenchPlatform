@@ -2,7 +2,7 @@
 const nextConfig = {
 	basePath: "/qabenchprogram",
 	reactStrictMode: true,
-	// output: "export",
+	output: "export",
 	// images: {
 	// 	unoptimized: true,
 	// }
