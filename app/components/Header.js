@@ -26,7 +26,7 @@ export default function Header() {
     <header style={headerStyles}>
       <Link href="/">
         <Image
-          src="/solvd-logo.png"
+						src="/solvd-logo.png"
           alt="Solvd logo"
           width={200}
           height={50}
