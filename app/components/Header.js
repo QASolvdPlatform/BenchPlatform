@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import cover from "./cover.png";
+import solvdLogo from "./solvd-logo.png";
 
 
 const headerStyles = {
@@ -26,7 +28,7 @@ export default function Header() {
     <header style={headerStyles}>
       <Link href="/">
         <Image
-						src="/solvd-logo.png"
+						src={solvdLogo}
           alt="Solvd logo"
           width={200}
           height={50}
@@ -41,7 +43,7 @@ export default function Header() {
       </nav>
     </header>
     <Image
-      src="/cover.png"
+				src={cover}
       alt="Solvd cover"
       width={1000}
       height={200}
