@@ -1,21 +1,16 @@
 import React from "react";
+import styles from "./Sidebar.module.css";
 
-const sidebarButtons = {
-    display: "flex",
-    flexDirection: "column",
-    gap: "1rem",
-    padding: "1rem",
-    backgroundColor: "#f4f4f4",
-    borderRadius: "5px",
-};
 const Sidebar = ({ items, onSetActive }) => {
     return (
-        <div style={sidebarButtons}>
+        <div className={styles.sidebar}>
             {items.map((item) => (
                 <button
                     key={item.title}
                     onClick={() => onSetActive(item.title)}
-                    style={{ fontWeight: item.isActive ? "bold" : "normal" }}
+                    className={`${styles.button} ${
+                        item.isActive ? styles.buttonActive : ""
+                    }`}
                 >
                     {item.title}
                 </button>
