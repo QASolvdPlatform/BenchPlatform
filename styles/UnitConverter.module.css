@@ -65,4 +65,12 @@
   background-color: rgb(198, 198, 198);
   padding: 1rem;
   border-radius: 1rem;
+  transition: background-color 0.3s, opacity 0.3s;
+  background-color: transparent;
+  opacity: 0; /* Start with the result being invisible */
+}
+
+.result.hasContent {
+  background-color: #e8f0fe; /* or any color you want */
+  opacity: 1; /* Fully visible when there is content */
 }

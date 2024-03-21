@@ -102,7 +102,13 @@ function UnitConverter() {
                     >
                         Convert
                     </button>
-                    <div className={styles.result}>{result}</div>
+                    <div
+                        className={`${styles.result} ${
+                            result ? styles.hasContent : ""
+                        }`}
+                    >
+                        {result}
+                    </div>
                 </div>
             </div>
         </Layout>
