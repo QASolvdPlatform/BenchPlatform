@@ -1,5 +1,9 @@
 import Layout from "@/app/components/Layout";
 import Sidebar from "@/app/components/Sidebar";
+import UnitConverter from "@/app/components/UnitConverter";
+import styles from "@/styles/BenchPractice.module.css";
+
+import Link from "next/link";
 import { useState } from "react";
 
 const sidebarButtons = [
@@ -173,6 +177,46 @@ const BenchPractice = () => {
                                 </a>
                             </p>
                             <h2>Test Cases Execution Report Peer Review</h2>
+                            <div className={styles.container}>
+                                <h3 className={styles.title}>
+                                    Unit Converter App
+                                </h3>
+                                <div>
+                                    <Link
+                                        href="/unit-converter/version1"
+                                        passHref
+                                    >
+                                        <button
+                                            type="button"
+                                            className={styles.button}
+                                        >
+                                            Version 1
+                                        </button>
+                                    </Link>
+                                    <Link
+                                        href="/unit-converter/version2"
+                                        passHref
+                                    >
+                                        <button
+                                            type="button"
+                                            className={styles.button}
+                                        >
+                                            Version 2
+                                        </button>
+                                    </Link>
+                                    <Link
+                                        href="/unit-converter/version3"
+                                        passHref
+                                    >
+                                        <button
+                                            type="button"
+                                            className={styles.button}
+                                        >
+                                            Version 3
+                                        </button>
+                                    </Link>
+                                </div>
+                            </div>
                         </>
                     )}
                     {items[2].isActive && (

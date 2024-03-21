@@ -1,0 +1,68 @@
+/* UnitConverter.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.box {
+  border: 1px solid #cccccc;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px; /* Adjust width as necessary */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: white;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.input {
+  border: 1px solid #a5a4a4;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 80%;
+}
+
+.radioGroup {
+  margin-bottom: 20px;
+}
+
+.button {
+  background-color: rgb(209, 207, 207);
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-right: 8px;
+}
+
+.button:hover {
+  background-color: #b0afaf;
+}
+
+.button:last-child {
+  margin-right: 0;
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #333;
+  background-color: rgb(198, 198, 198);
+  padding: 1rem;
+  border-radius: 1rem;
+}

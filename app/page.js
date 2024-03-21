@@ -1,5 +1,7 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Provinces from "./components/Provinces";
+
 export default function Home() {
   return (
 			<div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
