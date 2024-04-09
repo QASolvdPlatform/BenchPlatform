@@ -1,54 +1,27 @@
-import Link from "next/link";
-import Image from "next/image";
-import cover from "./cover.png";
-import solvdLogo from "./solvd-logo.png";
-
-
-const headerStyles = {
-  backgroundColor: 'F6F6F8',
-  display: 'flex',
-  justifyContent: 'space-between',
-  backgroundColor: '#F6F6F8',
-};
-
-const linkStyles = {
-  display: 'inline-block',
-  textDecoration: 'none',
-  color: '646567',
-  backgroundColor: '#BEBEBF',
-  height: '3rem',
-  width: '8rem',
-  textAlign: 'center',
-  lineHeight: '3rem',
-  borderRadius: '8px',
-};
+import Link from 'next/link';
+import Image from 'next/image';
+import cover from './cover.png';
+import solvdLogo from './solvd-logo.png';
+import styles from '@/styles/Header.module.css';
 
 export default function Header() {
-  return (<>
-    <header style={headerStyles}>
-      <Link href="/">
-        <Image
-						src={solvdLogo}
-          alt="Solvd logo"
-          width={200}
-          height={50}
-        />
-      </Link>
-      <nav>
-        <Link style={linkStyles} href="/">Home</Link>
-        <Link style={linkStyles} href="/bench-practice">Bench Practice</Link>
-        <Link style={linkStyles} href="/webinars">Webinars</Link>
-        <Link style={linkStyles} href="/useful-links">Useful Links</Link>
-        <Link style={linkStyles} href="/clients-faq">Clients FAQ</Link>
-      </nav>
-    </header>
-    <Image
-				src={cover}
-      alt="Solvd cover"
-      width={1000}
-      height={200}
-      layout="responsive"
-    />
-  </>
+	return (
+		<>
+			<header className={styles.header}>
+				<Link href="/">
+					<Image src={solvdLogo} alt="Solvd logo" width={150} height={38} />
+				</Link>
+				<nav className={styles.nav}>
+					<Link href="/"><div className={styles.link}>Home</div></Link>
+					<Link href="/bench-practice"><div className={styles.link}>Bench Practice</div></Link>
+					<Link href="/webinars"><div className={styles.link}>Webinars</div></Link>
+					<Link href="/useful-links"><div className={styles.link}>Useful Links</div></Link>
+					<Link href="/clients-faq"><div className={styles.link}>Clients FAQ</div></Link>
+				</nav>
+			</header>
+			<div className={styles.coverImage}>
+				<Image src={cover} alt="Solvd cover" width={1000} height={200} layout="responsive" />
+			</div>
+		</>
   );
 }
