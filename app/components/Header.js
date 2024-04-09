@@ -19,9 +19,10 @@ export default function Header() {
 					<Link href="/clients-faq"><div className={styles.link}>Clients FAQ</div></Link>
 				</nav>
 			</header>
-			<div className={styles.coverImage}>
-				<Image src={cover} alt="Solvd cover" width={1000} height={200} layout="responsive" />
+			<div className={styles.coverImage} style={{ position: 'relative', height: '200px', width: '100%' }}>
+				<Image src={cover} alt="Solvd cover" layout="fill" objectFit="cover" />
 			</div>
+
 		</>
   );
 }

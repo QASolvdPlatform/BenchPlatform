@@ -1,5 +1,5 @@
 import Layout from "@/app/components/Layout";
-import Sidebar from "@/app/components/Sidebar";
+import Sidebar from "@/app/components/Sidebar/Sidebar";
 import UnitConverter from "@/app/components/UnitConverter";
 import styles from "@/styles/BenchPractice.module.css";
 
