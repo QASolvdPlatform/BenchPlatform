@@ -12,7 +12,8 @@
   border-radius: 10px;
   border: 1px solid #D3DFEB;
   transition: all ease-in-out 0.15s;
-  box-shadow: 0.25rem 0 1rem rgba(0, 0, 0, 0.35)
+  box-shadow: 0.25rem 0 1rem rgba(0, 0, 0, 0.35);
+    overflow: hidden;
 
 }
 

@@ -10,14 +10,23 @@ const footerStyles = {
 
 const linkStyles = {
   margin: "0 1rem",
+	color: "#476887",
+	textDecoration: "none",
+	padding: "0.5rem",
+
 };
+
+const pStyles = {
+	color: "#00CC66"
+}
+
 export default function Footer() {
 	return (
     <footer style={footerStyles}>
       <Link style={linkStyles} href="https://solvd.peopleforce.io/">PeopleForce</Link>
       <Link style={linkStyles} href="https://solvdinc.harvestapp.com/">Harvest</Link>
       <Link style={linkStyles} href="https://solvd.atlassian.net/servicedesk/">Service Desk</Link>
-			<p>© 2024 Solvd, Inc.</p>
+			<p style={pStyles}>© 2024 Solvd, Inc.</p>
 		</footer>
 	);
 }
