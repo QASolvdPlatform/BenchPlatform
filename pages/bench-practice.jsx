@@ -1,7 +1,7 @@
 import Layout from "@/app/components/Layout";
 import Sidebar from "@/app/components/Sidebar/Sidebar";
-import UnitConverter from "@/app/components/UnitConverter";
 import styles from "@/styles/BenchPractice.module.css";
+import CollapsibleBox from "@/app/components/CollapsibleBox/CollapsibleBox";
 
 import Link from "next/link";
 import { useState } from "react";
@@ -40,18 +40,19 @@ const BenchPractice = () => {
                 <div style={{ flex: 3, padding: "0 2rem" }}>
                     {items[0].isActive && (
                         <>
-                            <h2>Create Test Plan:</h2>
-                            <p>
-                                <a
-                                    href="https://www.youtube.com/watch?v=S2_AJP9Oeg0"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    https://www.youtube.com/watch?v=S2_AJP9Oeg0
-                                </a>
-                            </p>
-                            <h2>Peer Review Test Plan</h2>
-                            <h2>Test Cases Theory</h2>
+                            <CollapsibleBox title="Create Test Plan">
+                                <p>
+                                    <a
+                                        href="https://www.youtube.com/watch?v=S2_AJP9Oeg0"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        https://www.youtube.com/watch?v=S2_AJP9Oeg0
+                                    </a>
+                                </p>
+                            </CollapsibleBox>
+                            <CollapsibleBox title="Peer Review Test Plan" />
+                            <CollapsibleBox title="Test Cases Theory" />
                             <h2>
                                 UDEMY Course: Software Testing Test Techniques
                                 for Writing Test Cases

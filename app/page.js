@@ -17,7 +17,9 @@ export default function Home() {
 					title="Welcome to the QA Solvd team"
 					startsOpen={true}
 					showIcon={false}
-					isCollapsible={false}>
+					isCollapsible={false}
+					titleSize="h1"
+				>
 
 					<p style={{ margin: "2rem 0" }}>Welcome to the QA SOLVD TEAM ! We're thrilled to have you on our continuous learning platform. Our course is tailored to individuals like you who are currently not assigned to projects. Through a combination of tasks and instructional videos, you'll engage in a dynamic learning environment, staying updated on the latest trends and technologies in our field.</p>
 					<p style={{ margin: "2rem 0" }}>
