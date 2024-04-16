@@ -4,6 +4,7 @@ const footerStyles = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+	marginTop: "5rem",
   padding: "1rem",
   backgroundColor: "#F6F6F8",
 };

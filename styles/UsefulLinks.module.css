@@ -1,0 +1,28 @@
+.h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.image {
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0.25rem 0 1rem rgba(0, 0, 0, 0.35);
+
+}
+
+.image:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+}

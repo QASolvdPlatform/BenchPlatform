@@ -20,7 +20,7 @@
 .button {
   font-weight: normal;
   border: 1rem;
-  padding: 10px 1rem; /* Increased height */
+  padding: 10px 1rem;
   text-align: left;
   background-color: transparent;
   border: none;
@@ -33,10 +33,11 @@
 }
 
 .button:hover {
-  background-color: #F1F5F8; /* Faint grey background on hover */
+  background-color: #F1F5F8;
 }
 
 .buttonActive {
   font-weight: bold;
-  background-color: #F1F5F8; /* Faint grey background for active button */
+  background-color: #e5ecf3;
+    color: #00b65b
 }

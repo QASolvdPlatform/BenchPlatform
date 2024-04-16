@@ -63,3 +63,6 @@
 .expand .contentWrapper {
   padding: 0 1rem;
 }
+.centered {
+  background-color: red;
+}
