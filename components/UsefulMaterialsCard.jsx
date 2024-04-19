@@ -2,6 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+//Bug: Deprecated!!!
+
 const UsefulMaterialsCard = ({ imageUrl, title, description, webUrl }) => {
     return (
         <div

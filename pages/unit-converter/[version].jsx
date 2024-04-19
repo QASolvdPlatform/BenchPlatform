@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-import Layout from "../../app/components/Layout";
+import Layout from "../../components/Layout";
 import Link from "next/link";
-import styles from "../../styles/UnitConverter.module.css";
+import styles from "./UnitConverter.module.css";
 
 function UnitConverter() {
     const router = useRouter();
@@ -33,8 +33,8 @@ function UnitConverter() {
                 // Bug: Incorrect conversion formula
                 conversionResult =
                     conversionType === "CtoF"
-                        ? `${value}°C is ${(value * 2 + 30).toFixed(2)}°F`
-                        : `${value}°F is ${(value / 2 - 15).toFixed(2)}°C`;
+                        ? `${value}°C is ${(value * 2).toFixed(2)}°F`
+                        : `${value}°F is ${(value / 2).toFixed(2)}°C`;
                 break;
             case "version3":
                 // Bug: Displays the input value without converting
@@ -59,15 +59,7 @@ function UnitConverter() {
                             Go back
                         </button>
                     </Link>
-                    <h3 className={styles.title}>
-                        Temperature Converter (
-                        {version === "version1"
-                            ? "Correct version"
-                            : version === "version2"
-                            ? "Bug 1: Incorrect Formula"
-                            : "Bug 2: No Conversion"}
-                        )
-                    </h3>
+                    <h3 className={styles.title}>Temperature Converter</h3>
                     <input
                         className={styles.input}
                         type="text"
@@ -102,13 +94,17 @@ function UnitConverter() {
                     >
                         Convert
                     </button>
-                    <div
-                        className={`${styles.result} ${
-                            result ? styles.hasContent : ""
-                        }`}
-                    >
-                        {result}
-                    </div>
+                    {version !== "version1" ? (
+                        <div
+                            className={`${styles.result} ${
+                                result ? styles.hasContent : ""
+                            }`}
+                        >
+                            {result}
+                        </div>
+                    ) : (
+                        <p>{result}</p>
+                    )}
                 </div>
             </div>
         </Layout>

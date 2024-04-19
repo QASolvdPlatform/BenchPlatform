@@ -1,4 +1,7 @@
+/* global.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 body {
   margin: 0;
   background-color: rgb(241,245,248);
+  font-family: 'Inter', 'Roboto', sans-serif;
 }

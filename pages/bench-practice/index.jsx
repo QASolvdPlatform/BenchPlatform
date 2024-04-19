@@ -1,8 +1,7 @@
-import Layout from "@/app/components/Layout";
-import Sidebar from "@/app/components/Sidebar/Sidebar";
-import styles from "@/styles/BenchPractice.module.css";
-import CollapsibleBox from "@/app/components/CollapsibleBox/CollapsibleBox";
-
+import Layout from "@/components/Layout";
+import Sidebar from "@/components/Sidebar";
+import styles from "./index.module.css";
+import CollapsibleBox from "@/components/CollapsibleBox";
 import Link from "next/link";
 import { useState } from "react";
 
