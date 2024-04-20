@@ -56,3 +56,62 @@
 .buttons {
   margin-right: 2rem;
 }
+.userProfile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.userName {
+  font-size: 1rem;
+  color: #476887;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.userImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.roundedImage {
+  border-radius: 50%;
+}
+
+.dropdownMenu {
+  position: absolute;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  top: 100%;
+  z-index: 1050;
+}
+
+
+
+
+.auth button {
+  height: 40px;
+  /* Match height to userImage for alignment */
+  background-color: #e5ecf3;
+  border: none;
+  border-radius: 6px;
+  padding: 0 15px;
+  cursor: pointer;
+  color: #476887;
+  font-weight: 600;
+}
+
+.auth button:hover {
+  background-color: #cdd9e3;
+}

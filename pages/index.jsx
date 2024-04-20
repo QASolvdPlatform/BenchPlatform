@@ -42,6 +42,7 @@ export default function Home() {
                         className={styles.solvdCover}
                         src={SolvdCover}
                         layout="responsive"
+                        alt="Solvd Cover"
                     />
                 </CollapsibleBox>
             </main>

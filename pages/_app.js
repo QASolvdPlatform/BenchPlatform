@@ -1,13 +1,14 @@
 import '@/styles/global.css';
-import { Inter } from "next/font/google";
+import { SessionProvider } from "next-auth/react";
 
-const inter = Inter({ subsets: ["latin"] });
 
-function MyApp({ Component, pageProps }) {
+function App({ Component, pageProps }) {
 	return (
-		<Component {...pageProps} />
+		<SessionProvider session={pageProps.session}>
+			<Component {...pageProps} />
+		</SessionProvider>
 	);
 }
 
-export default MyApp;
+export default App;
 

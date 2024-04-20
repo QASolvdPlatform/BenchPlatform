@@ -3,8 +3,18 @@ import Image from "next/image";
 import cover from "@/public/images/cover.png";
 import solvdLogo from "@/public/images/Logo_solvd_RGB_Original.png";
 import styles from "./index.module.css";
+import { useSession, signIn, signOut } from "next-auth/react";
+import { useState } from "react";
 
 export default function Header() {
+    const { data: session } = useSession();
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+
+    const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
+    const firstName = session?.user?.name?.split(" ")[0] || "";
+
+    console.log("session: ", session);
+
     return (
         <>
             <header className={styles.header}>
@@ -29,6 +39,36 @@ export default function Header() {
                             <div className={styles.button}>Useful Links</div>
                         </Link>
                         {/* <Link href="/clients-faq"><div className={styles.button}>Clients FAQ</div></Link> */}
+                    </div>
+                    <div className={styles.auth}>
+                        {session ? (
+                            <div className={styles.userProfile}>
+                                <div className={styles.userImage}>
+                                    <Image
+                                        src={session.user.image}
+                                        alt="Profile Image"
+                                        width={40}
+                                        height={40}
+                                        className={styles.roundedImage}
+                                    />
+                                </div>
+                                <div
+                                    onClick={toggleDropdown}
+                                    className={styles.userName}
+                                >
+                                    {firstName} ▼
+                                </div>
+                                {dropdownOpen && (
+                                    <div className={styles.dropdownMenu}>
+                                        <button onClick={() => signOut()}>
+                                            Sign Out
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
+                        ) : (
+                            <button onClick={() => signIn()}>Sign In</button>
+                        )}
                     </div>
                 </nav>
             </header>
