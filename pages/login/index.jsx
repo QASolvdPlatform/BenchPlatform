@@ -16,7 +16,11 @@ const Login = () => {
                 />
                 <button
                     onClick={() =>
-                        signIn("google", { callbackUrl: redirectUrl })
+                        signIn("google", {
+                            prompt: "consent",
+                            redirect: false,
+                            callbackUrl: redirectUrl,
+                        })
                     }
                 >
                     Sign in with Google
