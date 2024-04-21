@@ -7,6 +7,7 @@ import CollapsibleBox from "@/components/CollapsibleBox";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./UsefulLinks.module.css";
+import { getSession } from "next-auth/react";
 
 const cards = [
     {
@@ -72,4 +73,22 @@ const UsefulLinks = () => {
     );
 };
 
+export async function getServerSideProps(context) {
+    const session = await getSession({ req: context.req });
+
+    if (!session) {
+        return {
+            redirect: {
+                destination: "/login",
+                permanent: false,
+            },
+        };
+    }
+
+    return {
+        props: {
+            user: session.user, // pass user data to the page
+        },
+    };
+}
 export default UsefulLinks;

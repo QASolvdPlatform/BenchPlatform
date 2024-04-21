@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import Image from "next/image";
 import SolvdCover from "@/public/images/solvd-cover.jpg";
 import styles from "@/styles/index.module.css";
+import { getSession } from "next-auth/react";
 
 export default function Home() {
     return (
@@ -48,4 +49,23 @@ export default function Home() {
             </main>
         </Layout>
     );
+}
+
+export async function getServerSideProps(context) {
+    const session = await getSession({ req: context.req });
+
+    if (!session) {
+        return {
+            redirect: {
+                destination: "/login",
+                permanent: false,
+            },
+        };
+    }
+
+    return {
+        props: {
+            user: session.user, // pass user data to the page
+        },
+    };
 }

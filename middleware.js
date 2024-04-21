@@ -18,12 +18,6 @@ export async function middleware(req) {
 	}
 }
 
-// export function middleware(request) {
-// 	console.log('Middleware was hit');
-// 	return NextResponse.next();
-// }
-
-
 export const config = {
 	matcher: ['/((?!api|_next|static).*)']
 };
