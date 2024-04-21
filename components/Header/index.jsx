@@ -27,48 +27,54 @@ export default function Header() {
                             height={38}
                         />
                     </Link>
-                    <div className={styles.buttons}>
-                        <Link href="/">
-                            <div className={styles.button}>Home</div>
-                        </Link>
-                        <Link href="/bench-practice">
-                            <div className={styles.button}>Practice</div>
-                        </Link>
-                        {/* <Link href="/webinars"><div className={styles.button}>Webinars</div></Link> */}
-                        <Link href="/useful-links">
-                            <div className={styles.button}>Useful Links</div>
-                        </Link>
-                        {/* <Link href="/clients-faq"><div className={styles.button}>Clients FAQ</div></Link> */}
-                    </div>
-                    <div className={styles.auth}>
-                        {session ? (
-                            <div className={styles.userProfile}>
-                                <div className={styles.userImage}>
-                                    <Image
-                                        src={session.user.image}
-                                        alt="Profile Image"
-                                        width={40}
-                                        height={40}
-                                        className={styles.roundedImage}
-                                    />
+                    <div className={styles.buttonGroup}>
+                        <div className={styles.buttons}>
+                            <Link href="/">
+                                <div className={styles.button}>Home</div>
+                            </Link>
+                            <Link href="/bench-practice">
+                                <div className={styles.button}>Practice</div>
+                            </Link>
+                            {/* <Link href="/webinars"><div className={styles.button}>Webinars</div></Link> */}
+                            <Link href="/useful-links">
+                                <div className={styles.button}>
+                                    Useful Links
                                 </div>
-                                <div
-                                    onClick={toggleDropdown}
-                                    className={styles.userName}
-                                >
-                                    {firstName} ▼
-                                </div>
-                                {dropdownOpen && (
-                                    <div className={styles.dropdownMenu}>
-                                        <button onClick={() => signOut()}>
-                                            Sign Out
-                                        </button>
+                            </Link>
+                            {/* <Link href="/clients-faq"><div className={styles.button}>Clients FAQ</div></Link> */}
+                        </div>
+                        <div className={styles.auth}>
+                            {session ? (
+                                <div className={styles.userProfile}>
+                                    <div className={styles.userImage}>
+                                        <Image
+                                            src={session.user.image}
+                                            alt="Profile Image"
+                                            width={40}
+                                            height={40}
+                                            className={styles.roundedImage}
+                                        />
                                     </div>
-                                )}
-                            </div>
-                        ) : (
-                            <button onClick={() => signIn()}>Sign In</button>
-                        )}
+                                    <div
+                                        onClick={toggleDropdown}
+                                        className={styles.userName}
+                                    >
+                                        {firstName} ▼
+                                    </div>
+                                    {dropdownOpen && (
+                                        <div className={styles.dropdownMenu}>
+                                            <button onClick={() => signOut()}>
+                                                Sign Out
+                                            </button>
+                                        </div>
+                                    )}
+                                </div>
+                            ) : (
+                                <button onClick={() => signIn()}>
+                                    Sign In
+                                </button>
+                            )}
+                        </div>
                     </div>
                 </nav>
             </header>

@@ -12,6 +12,11 @@
   height: 70px;
 }
 
+.buttonGroup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 .logo {
   margin-left: 1rem;
 }
@@ -55,6 +60,7 @@
 
 .buttons {
   margin-right: 2rem;
+  justify-self: end;
 }
 .userProfile {
   display: flex;
