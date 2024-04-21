@@ -36,6 +36,9 @@ const Login = () => {
                         />
                         Login with Google
                     </button>
+                    <p className={styles.terms}>
+                        Only users from this organization
+                    </p>
                 </div>
             </div>
         </div>

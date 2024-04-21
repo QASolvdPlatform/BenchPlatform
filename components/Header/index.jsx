@@ -2,6 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import cover from "@/public/images/cover.png";
 import solvdLogo from "@/public/images/Logo_solvd_RGB_Original.png";
+import { MdArrowDropDown } from "react-icons/md";
+import { IoIosArrowDropdownCircle } from "react-icons/io";
+import { IoMdArrowDropdown } from "react-icons/io";
 import styles from "./index.module.css";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useState } from "react";
@@ -59,7 +62,7 @@ export default function Header() {
                                         onClick={toggleDropdown}
                                         className={styles.userName}
                                     >
-                                        {firstName} ▼
+                                        {firstName} <IoMdArrowDropdown />
                                     </div>
                                     {dropdownOpen && (
                                         <div className={styles.dropdownMenu}>
