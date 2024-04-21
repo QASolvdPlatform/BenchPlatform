@@ -25,5 +25,5 @@ export async function middleware(req) {
 
 
 export const config = {
-	matcher: ['/', '/bench-practice', '/useful-links', '/webinars', '/clients-faq', '/login']
+	matcher: ['/((?!api|_next|static).*)']
 };
