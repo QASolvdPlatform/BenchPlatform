@@ -53,7 +53,7 @@ export default function Home() {
 
 export async function getServerSideProps(context) {
     const session = await getSession({ req: context.req });
-
+    console.log("getServerSideProps session: ", session);
     if (!session) {
         return {
             redirect: {
@@ -65,7 +65,7 @@ export async function getServerSideProps(context) {
 
     return {
         props: {
-            user: session.user, // pass user data to the page
+            user: session.user,
         },
     };
 }
