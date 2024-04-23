@@ -54,7 +54,7 @@ function UnitConverter() {
         <Layout>
             <div className={styles.container}>
                 <div className={styles.box}>
-                    <Link href="/bench-practice">
+                    <Link href="/bench-practice?activeItem=1">
                         <button type="button" className={styles.button}>
                             Go back
                         </button>

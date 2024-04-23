@@ -3,8 +3,9 @@ import Sidebar from "@/components/Sidebar";
 import styles from "./index.module.css";
 import CollapsibleBox from "@/components/CollapsibleBox";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { getSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const sidebarButtons = [
     { title: "QA Conception First Activities", isActive: true },
@@ -24,6 +25,18 @@ const sidebarButtons = [
 
 const BenchPractice = () => {
     const [items, setItems] = useState(sidebarButtons);
+    const router = useRouter();
+
+    useEffect(() => {
+        const activeItem = parseInt(router.query.activeItem);
+        if (
+            !isNaN(activeItem) &&
+            activeItem >= 0 &&
+            activeItem < items.length
+        ) {
+            handleSetActive(items[activeItem].title);
+        }
+    }, [router.query.activeItem]);
 
     const handleSetActive = (title) => {
         const updatedItems = items.map((item) => ({
@@ -197,7 +210,7 @@ const BenchPractice = () => {
                                     >
                                         <div className={styles.centered}>
                                             <Link
-                                                href="/unit-converter/version3"
+                                                href="/unit-converter/version1"
                                                 passHref
                                             >
                                                 <button
@@ -219,7 +232,7 @@ const BenchPractice = () => {
                                                 </button>
                                             </Link>
                                             <Link
-                                                href="/unit-converter/version1"
+                                                href="/unit-converter/version3"
                                                 passHref
                                             >
                                                 <button
