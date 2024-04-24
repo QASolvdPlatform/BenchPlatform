@@ -4,6 +4,7 @@ import styles from "./index.module.css";
 import CollapsibleBox from "@/components/CollapsibleBox";
 import Link from "next/link";
 import { useState } from "react";
+import { getSession } from "next-auth/react";
 
 const sidebarButtons = [
     { title: "QA Conception First Activities", isActive: true },
@@ -524,5 +525,24 @@ const BenchPractice = () => {
         </Layout>
     );
 };
+
+export async function getServerSideProps(context) {
+    const session = await getSession({ req: context.req });
+
+    if (!session) {
+        return {
+            redirect: {
+                destination: "/login",
+                permanent: false,
+            },
+        };
+    }
+
+    return {
+        props: {
+            user: session.user, // pass user data to the page
+        },
+    };
+}
 
 export default BenchPractice;
