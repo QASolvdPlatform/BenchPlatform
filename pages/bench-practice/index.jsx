@@ -63,6 +63,14 @@ const BenchPractice = () => {
                         <>
                             <CollapsibleBox title="Create Test Plan">
                                 <p>
+                                    Watch this YouTube video on creating a test
+                                    plan, a crucial step in software development
+                                    and quality assurance processes. Learn how
+                                    to efficiently design and execute tests to
+                                    ensure the reliability and functionality of
+                                    your software products.
+                                </p>
+                                <p>
                                     <a
                                         href="https://www.youtube.com/watch?v=S2_AJP9Oeg0"
                                         target="_blank"
@@ -72,7 +80,16 @@ const BenchPractice = () => {
                                     </a>
                                 </p>
                             </CollapsibleBox>
-                            <CollapsibleBox title="Peer Review Test Plan" />
+                            <CollapsibleBox title="Peer Review Test Plan">
+                                <p>
+                                    Conduct a peer review of provided test
+                                    cases, assessing their clarity,
+                                    completeness, and effectiveness. Provide
+                                    constructive feedback on areas for
+                                    improvement, ensuring alignment with project
+                                    requirements and best testing practices.
+                                </p>
+                            </CollapsibleBox>
                             <CollapsibleBox title="Test Cases Theory" />
                             <CollapsibleBox title="UDEMY Course: Software Testing Test Techniques for Writing Test Cases">
                                 <p>
@@ -87,6 +104,17 @@ const BenchPractice = () => {
                             </CollapsibleBox>
                             <CollapsibleBox title="Scrum Bases">
                                 <p>
+                                    Explore the foundations of Scrum with this
+                                    engaging Udemy course. Dive into the core
+                                    principles and practices of this agile
+                                    framework, including sprint planning,
+                                    backlog grooming, and daily stand-ups. Gain
+                                    valuable insights and practical skills to
+                                    lead and participate effectively in Scrum
+                                    teams, accelerating project delivery and
+                                    maximizing value for stakeholders
+                                </p>
+                                <p>
                                     <a
                                         href="https://www.udemy.com/course/foundations-of-agile-software-testing-j/learn/lecture/6836722?start=0#overview"
                                         target="_blank"
@@ -98,6 +126,17 @@ const BenchPractice = () => {
                             </CollapsibleBox>
                             <CollapsibleBox title="SDLC Theory Videos">
                                 <p>
+                                    Discover the intricacies of the Software
+                                    Development Life Cycle (SDLC) in this
+                                    informative YouTube video. Explore each
+                                    phase of the SDLC, from planning and
+                                    analysis to implementation and maintenance,
+                                    gaining valuable insights into best
+                                    practices and methodologies. Unlock the
+                                    secrets to delivering successful software
+                                    projects on time and within budget
+                                </p>
+                                <p>
                                     <a
                                         href="https://www.youtube.com/watch?v=VFQtSqChlsk"
                                         target="_blank"
@@ -108,6 +147,13 @@ const BenchPractice = () => {
                                 </p>
                             </CollapsibleBox>
                             <CollapsibleBox title="User Stories Effective Analysis">
+                                <p>
+                                    Unlock the secrets of effective user story
+                                    analysis in this concise YouTube video.
+                                    Discover how to dissect user stories,
+                                    uncover hidden requirements, and deliver
+                                    user-centric products efficiently.
+                                </p>
                                 <p>
                                     <a
                                         href="https://www.youtube.com/watch?v=UukO5VUfw8o"
@@ -123,6 +169,17 @@ const BenchPractice = () => {
                     {items[1].isActive && (
                         <>
                             <CollapsibleBox title="Gherkin Test Cases">
+                                <p>
+                                    Explore the world of creating test cases in
+                                    Gherkin mode with this insightful YouTube
+                                    video. Learn how to write clear and concise
+                                    test scenarios using the Gherkin syntax,
+                                    enabling effective collaboration between
+                                    development and QA teams. Unlock the power
+                                    of behavior-driven development (BDD) to
+                                    ensure comprehensive test coverage and
+                                    enhance software quality.
+                                </p>
                                 <p>
                                     <a
                                         href="https://cucumber.io/docs/gherkin/reference/"
@@ -190,8 +247,27 @@ const BenchPractice = () => {
                                 </p>
                             </CollapsibleBox>
                             <CollapsibleBox title="Peer Review Test Cases" />
-                            <CollapsibleBox title="Test Cases Execution" />
-                            <CollapsibleBox title="Test Cases Execution Reort">
+                            <CollapsibleBox title="Test Cases Execution">
+                                <p>
+                                    Execute the assigned test cases according to
+                                    the provided specifications and test plans.
+                                    Record test results accurately, including
+                                    any deviations from expected outcomes.
+                                    Report any issues encountered during
+                                    execution and ensure thorough coverage of
+                                    test scenarios.
+                                </p>
+                            </CollapsibleBox>
+                            <CollapsibleBox title="Test Cases Execution Report">
+                                <p>
+                                    Participate in a practical exercise focused
+                                    on creating a test case execution report.
+                                    Practice compiling and summarizing test case
+                                    execution results, including pass/fail
+                                    status and any issues encountered. Enhance
+                                    your skills in communicating test progress
+                                    and outcomes effectively to stakeholders.
+                                </p>
                                 <p>
                                     <a
                                         href="https://docs.google.com/document/d/1owaPD1vBQX12Pe2Epoh2EmarxFUace_TfvDjBhmybnQ/edit"
@@ -327,6 +403,14 @@ const BenchPractice = () => {
                                 </p>
                             </CollapsibleBox>
                             <CollapsibleBox title="Create Test Cases to Test API">
+                                <p>
+                                    Practice creating test cases for a list of
+                                    web pages to enhance your software testing
+                                    skills. Develop scenarios and ensure
+                                    thorough coverage, refining your ability to
+                                    validate web application functionality and
+                                    usability
+                                </p>
                                 <p>
                                     <a
                                         href="https://solvdqa.zebrunner.com/projects/LTM/test-cases"
@@ -464,6 +548,14 @@ const BenchPractice = () => {
                     {items[7].isActive && (
                         <>
                             <CollapsibleBox title="Performance Test Theory">
+                                <p>
+                                    Enroll in this comprehensive Udemy course of
+                                    creating test cases. Dive deep into the
+                                    principles and techniques of test case
+                                    development, covering everything from
+                                    requirement analysis to execution
+                                    strategies.{" "}
+                                </p>
                                 <p>
                                     <a
                                         href="https://www.udemy.com/course/jmeter-tutorial/learn/lecture/2700234?start=15#overview"
