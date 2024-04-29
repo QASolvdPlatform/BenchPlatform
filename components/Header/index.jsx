@@ -14,9 +14,6 @@ export default function Header() {
     const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
     const firstName = session?.user?.name?.split(" ")[0] || "";
 
-    console.log("session: ", session);
-    console.log("Image", session?.user.image);
-
     return (
         <>
             <header className={styles.header}>

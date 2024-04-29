@@ -246,6 +246,49 @@ const BenchPractice = () => {
                                     </div>
                                 </CollapsibleBox>
                             </div>
+                            <div className="centered">
+                                <CollapsibleBox title="23 Provinces App">
+                                    <div
+                                        className={`${styles.container} ${styles.centered}`}
+                                    >
+                                        <div className={styles.centered}>
+                                            <Link
+                                                href="/provinces/version1"
+                                                passHref
+                                            >
+                                                <button
+                                                    type="button"
+                                                    className={styles.button}
+                                                >
+                                                    Version 1
+                                                </button>
+                                            </Link>
+                                            <Link
+                                                href="/provinces/version2"
+                                                passHref
+                                            >
+                                                <button
+                                                    type="button"
+                                                    className={styles.button}
+                                                >
+                                                    Version 2
+                                                </button>
+                                            </Link>
+                                            <Link
+                                                href="/provinces/version3"
+                                                passHref
+                                            >
+                                                <button
+                                                    type="button"
+                                                    className={styles.button}
+                                                >
+                                                    Version 3
+                                                </button>
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </CollapsibleBox>
+                            </div>
                         </>
                     )}
 

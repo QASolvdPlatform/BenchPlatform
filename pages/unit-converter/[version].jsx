@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import Layout from "../../components/Layout";
 import Link from "next/link";
-import styles from "./UnitConverter.module.css";
+import styles from "@/styles/AppLayout.module.css";
+import { getSession } from "next-auth/react";
 
 function UnitConverter() {
     const router = useRouter();
@@ -109,6 +110,25 @@ function UnitConverter() {
             </div>
         </Layout>
     );
+}
+
+export async function getServerSideProps(context) {
+    const session = await getSession({ req: context.req });
+
+    if (!session) {
+        return {
+            redirect: {
+                destination: "/login",
+                permanent: false,
+            },
+        };
+    }
+
+    return {
+        props: {
+            user: session.user, // pass user data to the page
+        },
+    };
 }
 
 export default UnitConverter;
