@@ -1,10 +1,13 @@
 "use client";
+import { useRouter } from "next/router";
 import React, { useState, useRef, useEffect } from "react";
 import styles from "@/styles/AppLayout.module.css";
 import { VscError } from "react-icons/vsc";
-import { FaCheckCircle } from "react-icons/fa";
 
 const ProvinceSearch = () => {
+    const router = useRouter();
+    const version = router.asPath.split("/").pop();
+
     const [inputValue, setInputValue] = useState("");
     const [selectedColumn, setSelectedColumn] = useState("name");
     const [result, setResult] = useState(null);
@@ -24,9 +27,29 @@ const ProvinceSearch = () => {
         }
     }, [result]);
 
+    useEffect(() => {
+        if (version === "version1") {
+            (result || error) && launchPopup();
+        }
+    }, [result, error]);
+
+    function launchPopup() {
+        if (version === "version1") {
+            alert(
+                `${
+                    error
+                        ? error
+                        : result
+                        ? `Name: ${result[0]}, Capital: ${result[1].capital}`
+                        : `No matches found for '${selectedColumn} : ${inputValue}', try again!`
+                }`
+            );
+        }
+    }
+
     const handleSearch = (e) => {
-        setResult(null);
         e.preventDefault();
+        setResult(null);
 
         //Validation
         if (!inputValue.trim()) {
@@ -34,6 +57,14 @@ const ProvinceSearch = () => {
             setResult(null);
             return;
         }
+
+        // For Version 2: Only allow alphabetic searches
+        if (version === "version2" && /[0-9]/.test(inputValue)) {
+            setError("Error! I can't handle Numeric values!");
+            setResult(null);
+            return;
+        }
+
         if (
             (selectedColumn === "name" || selectedColumn === "capital") &&
             !isNaN(inputValue)
@@ -65,7 +96,7 @@ const ProvinceSearch = () => {
         );
 
         if (searchResult) {
-            setResult(searchResult[1]);
+            setResult(searchResult);
             setError("");
         } else {
             setResult(null);
@@ -97,7 +128,9 @@ const ProvinceSearch = () => {
     };
 
     const handleRadioChange = (e) => {
-        setSelectedColumn(e.target.value);
+        if (version !== "version1") {
+            setSelectedColumn(e.target.value);
+        }
         setResult(null);
         setError("");
     };
@@ -120,6 +153,7 @@ const ProvinceSearch = () => {
                             value="name"
                             checked={selectedColumn === "name"}
                             onChange={handleRadioChange}
+                            disabled={version === "version1"}
                         />{" "}
                         Name
                     </label>
@@ -130,6 +164,7 @@ const ProvinceSearch = () => {
                             value="capital"
                             checked={selectedColumn === "capital"}
                             onChange={handleRadioChange}
+                            disabled={version === "version1"}
                         />{" "}
                         Capital
                     </label>
@@ -140,8 +175,11 @@ const ProvinceSearch = () => {
                             value="inhabitants"
                             checked={selectedColumn === "inhabitants"}
                             onChange={handleRadioChange}
+                            disabled={version === "version1"}
                         />{" "}
-                        Inhabitants
+                        {version === "version1"
+                            ? "Inhbabitants"
+                            : "Inhabitants"}
                     </label>
                     <label>
                         <input
@@ -150,6 +188,7 @@ const ProvinceSearch = () => {
                             value="area"
                             checked={selectedColumn === "area"}
                             onChange={handleRadioChange}
+                            disabled={version === "version1"}
                         />{" "}
                         Area
                     </label>
@@ -162,20 +201,49 @@ const ProvinceSearch = () => {
             </form>
             {error && (
                 <div
-                    className={`${styles.result} ${error ? styles.error : ""}`}
+                    className={`${
+                        version === "version1" ? "" : styles.result
+                    } ${
+                        error
+                            ? version === "version1"
+                                ? styles.error1
+                                : version === "version2"
+                                ? styles.error2
+                                : styles.error
+                            : ""
+                    }`}
                 >
                     <VscError />
                     {error}
                 </div>
             )}
-            {result && (
+            {result && version === "version1" && (
+                <div>
+                    <p>Name: {result[0]}</p>
+                    <p>Capital: {result[1].capital}</p>
+                </div>
+            )}
+            {result && version === "version2" && (
                 <div
                     className={`${styles.result} ${
                         result ? styles.hasContent : ""
                     }`}
                 >
-                    <FaCheckCircle /> Success! Found {selectedColumn} with a
-                    value of {inputValue}
+                    <p>Name: {result[0]}</p>
+                    <p>Capital: {result[1].capital}</p>
+                    <p>Inhabitants: {result[1].inhabitants}</p>
+                </div>
+            )}
+            {result && version === "version3" && (
+                <div
+                    className={`${styles.result} ${
+                        result ? styles.hasContent : ""
+                    }`}
+                >
+                    <p>Name: {result[0]}</p>
+                    <p>Capital: {result[1].capital}</p>
+                    <p>Inhabitants: {result[1].inhabitants}</p>
+                    <p>Area: {result[1].area} km&sup2;</p>
                 </div>
             )}
             {/* Grid to display all provinces */}

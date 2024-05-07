@@ -97,6 +97,27 @@
   vertical-align: baseline;
 }
 
+.error1 {
+
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  text-justify: center;
+  vertical-align: baseline;
+}
+
+.result.error2 {
+  background-color: pink;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  text-justify: center;
+  vertical-align: baseline;
+}
 /* CUSTOM STYLES FOR APPS */
 .provincesForm {
   display: flex;
